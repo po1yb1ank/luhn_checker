@@ -19,4 +19,15 @@ RSpec.describe CardChecker do
       expect(described_class.valid?('4561 2612 1234 5464')).to be_falsey
     end
   end
-end
+  class CardCheckerMock
+    def initialize
+      @argument = nil
+    end
+    class << self
+      def valid?(argument)
+        @argument
+        true
+      end
+    end
+  end
+  end
