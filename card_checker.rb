@@ -27,7 +27,7 @@ class CardChecker
   end
 
   def card_numbers
-    card.split('').map(&:to_i)
+    card.delete(' ').split('').map(&:to_i)
   end
 
   def even_modification(number)

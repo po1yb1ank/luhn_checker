@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require './card_checker'
+require '/home/user1/luhn_checker/card_checker.rb'
 
 RSpec.describe CardChecker do
   describe '.valid?' do
@@ -14,6 +14,9 @@ RSpec.describe CardChecker do
 
     it 'returns true for valid card with spaces' do
       expect(described_class.valid?('4561 2612 1234 5467')).to be_truthy
+    end
+    it 'returns false for invalid card with spaces' do
+      expect(described_class.valid?('4561 2612 1234 5464')).to be_falsey
     end
   end
 end
